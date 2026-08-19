@@ -1,0 +1,410 @@
+@font-face {
+    font-family: "Averta CY";
+    src:
+        url("fonts/AvertaCY-Regular.woff2") format("woff2"),
+        url("fonts/AvertaCY-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Averta CY", sans-serif;
+}
+
+.container_procces {
+    width: calc(100% - 56px);
+    margin: 28px;
+    padding: 44px 40px 48px;
+    background: #3980ff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.heading_procces {
+    width: 100%;
+    margin-bottom: 42px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Averta CY", sans-serif;
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.cards_procces {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 22px;
+    row-gap: 36px;
+    align-items: start;
+}
+
+.proccess_card_item {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.procces_image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 16px;
+}
+
+.procces_image > img:not(.ball) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.procces_image .ball {
+    position: absolute;
+    z-index: 5;
+     width: clamp(100px, 50%, 500px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.procces_image .ball.top-right {
+    top: -22%;
+    right: -3%;
+}
+
+.procces_image .ball.top-left {
+    top: -9%;
+    left: 4%;
+}
+
+.card_title_row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.card_number {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2469df;
+    color: #ffffff;
+    font-family: "Averta CY", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.proccess_card_item h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Averta CY", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.card_paragraph_wrapper {
+    width: 100%;
+}
+
+.proccess_card_item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: "Averta CY", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.button_procces {
+    width: 100%;
+    height: 130px;
+    min-height: 130px;
+    padding: 0 20px;
+    align-self: start;
+    border: none;
+    border-radius: 12px;
+    background: #f6534b;
+    color: #ffffff;
+    font-family: "Averta CY", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.button_procces:hover {
+    background: #e9463f;
+}
+
+@media (max-width: 1200px) {
+    .container_procces {
+        width: calc(100% - 40px);
+        margin: 20px;
+        padding: 42px 30px 44px;
+    }
+
+    .heading_procces {
+        font-size: 48px;
+        margin-bottom: 38px;
+    }
+
+    .cards_procces {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 22px;
+        row-gap: 34px;
+    }
+
+    .procces_image .ball {
+       width: clamp(100px, 50%, 500px);
+    }
+
+    .button_procces {
+        height: 130px;
+        min-height: 130px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container_procces {
+        width: calc(100% - 32px);
+        margin: 16px;
+        padding: 36px 24px 40px;
+        border-radius: 18px;
+    }
+
+    .heading_procces {
+        font-size: 40px;
+        margin-bottom: 34px;
+    }
+
+    .cards_procces {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 20px;
+        row-gap: 32px;
+    }
+
+    .procces_image {
+        margin-bottom: 14px;
+    }
+
+    .procces_image .ball {
+        width: clamp(100px, 50%, 500px);
+    }
+
+    .procces_image .ball.top-right {
+        top: -20%;
+        right: -3%;
+    }
+
+    .procces_image .ball.top-left {
+        top: -8%;
+        left: 4%;
+    }
+
+    .card_title_row {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .card_number {
+        width: 23px;
+        height: 23px;
+        min-width: 23px;
+        font-size: 12px;
+    }
+
+    .proccess_card_item h3 {
+        font-size: 17px;
+    }
+
+    .proccess_card_item p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .button_procces {
+        height: 130px;
+        min-height: 130px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container_procces {
+        width: calc(100% - 24px);
+        margin: 12px;
+        padding: 28px 12px 12px;
+        border-radius: 14px;
+    }
+
+    .heading_procces {
+        margin-bottom: 26px;
+        font-size: 30px;
+        line-height: 1.05;
+    }
+
+    .cards_procces {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 26px;
+    }
+
+    .proccess_card_item {
+        width: 100%;
+    }
+
+    .procces_image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-bottom: 11px;
+    }
+
+    .procces_image > img:not(.ball) {
+        border-radius: 10px;
+    }
+
+    .procces_image .ball {
+        /* width: clamp(35px, 24%, 60px); */
+        width: clamp(100px, 50%, 500px);
+    }
+
+    .procces_image .ball.top-right {
+        top: -19%;
+        right: -3%;
+    }
+
+    .procces_image .ball.top-left {
+        top: -8%;
+        left: 3%;
+    }
+
+    .card_title_row {
+        gap: 7px;
+        margin-bottom: 7px;
+    }
+
+    .card_number {
+        width: 19px;
+        height: 19px;
+        min-width: 19px;
+        font-size: 10px;
+    }
+
+    .proccess_card_item h3 {
+        font-size: 17px;
+        line-height: 1.15;
+    }
+
+    .proccess_card_item p {
+        font-size: 15px;
+        line-height: 1.38;
+    }
+
+    .button_procces {
+        width: 100%;
+        height: 60px;
+        min-height: 60px;
+        margin-top: -2px;
+        padding: 0 10px;
+        border-radius: 7px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container_procces {
+        width: calc(100% - 10px);
+        margin: 5px;
+        padding: 22px 6px 7px;
+        border-radius: 8px;
+    }
+
+    .heading_procces {
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+
+    .cards_procces {
+        gap: 20px;
+    }
+
+    .procces_image {
+        margin-bottom: 8px;
+    }
+
+    .procces_image > img:not(.ball) {
+        border-radius: 7px;
+    }
+
+    .procces_image .ball {
+        width: clamp(28px, 22%, 48px);
+    }
+
+    .procces_image .ball.top-right {
+        top: -18%;
+        right: -3%;
+    }
+
+    .procces_image .ball.top-left {
+        top: -7%;
+        left: 3%;
+    }
+
+    .card_title_row {
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+
+    .card_number {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        font-size: 8px;
+    }
+
+    .proccess_card_item h3 {
+        font-size: 17px;
+    }
+
+    .proccess_card_item p {
+        font-size: 15px;
+    }
+
+    .button_procces {
+        height: 48px;
+        min-height: 48px;
+        border-radius: 5px;
+        font-size: 8px;
+    }
+}

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import logo from "../assets/logo/logo.png";
 import whatsappIcon from "../assets/icons/whatsapp.png";
 import telegramIcon from "../assets/icons/telegram.png";
 import "../components/header.css";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header_container">
@@ -17,21 +20,33 @@ export default function Header() {
           </div>
         </a>
 
-        <nav className="header_nav nav">
+        {}
+        <button 
+          className={`burger ${isMenuOpen ? "burger-active" : ""}`} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Открыть меню"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {}
+        <nav className={`header_nav nav ${isMenuOpen ? "nav-open" : ""}`}>
           <ul className="nav_list">
-            <li className="nav_item">
+            <li className="nav_item" onClick={() => setIsMenuOpen(false)}>
               <a href="#" className="nav_link nav_link-active">Главная</a>
             </li>
-            <li className="nav_item">
+            <li className="nav_item" onClick={() => setIsMenuOpen(false)}>
               <a href="#" className="nav_link">О нас</a>
             </li>
-            <li className="nav_item">
+            <li className="nav_item" onClick={() => setIsMenuOpen(false)}>
               <a href="#" className="nav_link">Наши услуги</a>
             </li>
-            <li className="nav_item">
+            <li className="nav_item" onClick={() => setIsMenuOpen(false)}>
               <a href="#" className="nav_link">Этапы работы</a>
             </li>
-            <li className="nav_item">
+            <li className="nav_item" onClick={() => setIsMenuOpen(false)}>
               <a href="#" className="nav_link">Стоимость</a>
             </li>
             <li className="nav_item nav_item-dropdown">
